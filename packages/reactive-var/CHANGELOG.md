@@ -1,5 +1,11 @@
 # @deevoid/reactive-var
 
+## 2.0.1
+
+### Patch Changes
+
+- Add a readme file to better explain the API
+
 ## 2.0.0
 
 ### Major Changes

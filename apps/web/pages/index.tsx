@@ -1,5 +1,5 @@
-import { makeVar, useReactiveVar } from "devstack-reactive-var";
 import { useState, startTransition } from "react";
+import { makeVar, useReactiveVar } from "@deevoid/reactive-var";
 
 export const countMakeVar = makeVar(0);
 

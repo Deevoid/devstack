@@ -7,11 +7,23 @@ setInterval(() => {
   countMakeVar(countMakeVar() + 1);
 }, 50);
 
+function SlowComponent() {
+  const state = useReactiveVar(countMakeVar);
+  const now = performance.now();
+
+  while (performance.now() - now < 200) {
+    // do nothing
+  }
+  return <h3>Counter: {state}</h3>;
+}
+
 export default function Web() {
   const [show, setShow] = useState(false);
+
   return (
     <div className="App">
       <button
+        type="button"
         onClick={() => {
           startTransition(() => {
             setShow(!show);
@@ -31,14 +43,4 @@ export default function Web() {
       )}
     </div>
   );
-}
-
-function SlowComponent() {
-  const state = useReactiveVar(countMakeVar);
-  let now = performance.now();
-
-  while (performance.now() - now < 200) {
-    // do nothing
-  }
-  return <h3>Counter: {state}</h3>;
 }

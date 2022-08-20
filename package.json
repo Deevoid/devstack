@@ -15,10 +15,12 @@
     "changeset": "changeset",
     "version": "changeset version",
     "release": "changeset publish",
+    "cz": "cz",
     "prepare": "husky install"
   },
   "devDependencies": {
     "@changesets/cli": "^2.24.3",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint-config-custom": "*",
     "husky": "^8.0.0",
     "lint-staged": "^13.0.3",
@@ -35,6 +37,11 @@
     "*.{js,jsx,ts,tsx,json,css,md,mdx}": [
       "prettier --write"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   },
   "engines": {
     "npm": ">=7.0.0",
